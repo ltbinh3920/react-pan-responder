@@ -85,6 +85,9 @@ const getNumberActiveTouches = (ev) =>
 	ev.touches ? ev.touches.length : ev.type === 'mouseup' ? 0 : 1;
 
 const handleStart = (ev) => {
+	// Filter out mouse events that are not left clicks
+	if (ev.button === 1 || ev.button === 2) return;
+
 	const { type, timeStamp = 0 } = ev;
 	const lastDeltaTime = timeStamp - lastStartTimeStamp;
 	const lastTypeIsTouch = lastEventType === 'touchstart';
