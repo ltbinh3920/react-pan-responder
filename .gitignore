@@ -9,8 +9,5 @@ Thumbs.db
 *.log
 logs/
 node_modules/
-dist/
-lib/
-es/
 coverage/
 example/bundle.js
